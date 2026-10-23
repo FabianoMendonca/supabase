@@ -28,6 +28,11 @@ jobs:
       name: supabase
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      config.email: ${{ vars.EMAIL }}
+      config.publishableKey: ${{ vars.PUBLISHABLEKEY }}
+      config.url: ${{vars.URL}}
+      config.senha: ${{vars.SENHA}}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
